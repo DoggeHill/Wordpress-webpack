@@ -1,5 +1,5 @@
 {
-  "rules": {},
+  "rules": { "linebreak-style": 0},
   "env": {
     "es6": true,
     "browser": true
@@ -16,4 +16,4 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   }
-}
+};

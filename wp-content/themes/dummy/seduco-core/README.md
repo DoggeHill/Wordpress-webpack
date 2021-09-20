@@ -22,6 +22,11 @@ To create a development build:
 ```sh
 npm run build-dev
 ```
+To run as live server:
+
+```sh
+npm start
+```
 
 ## Running
 

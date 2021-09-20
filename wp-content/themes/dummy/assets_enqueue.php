@@ -29,8 +29,9 @@ echo '<span class="icon-close-line"></span>';
       // echo '<br>';
     } else if(pathinfo($file, PATHINFO_EXTENSION) === 'css'){
       $fullName = basename($file);    // main.3hZ9.css
+      echo $fullName;
       $name = substr(basename($fullName), 0, strpos(basename($fullName), '.')); // main
-      wp_register_style($name, get_stylesheet_directory_uri() . 'seduco-core/dist/' . $fullName);
+      wp_register_style($name, get_stylesheet_directory_uri() . '/seduco-core/dist/' . $fullName);
       wp_enqueue_style($name);
     }
   }

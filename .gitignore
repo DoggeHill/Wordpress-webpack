@@ -1,0 +1,8 @@
+*.**
+!wp-content/**
+wp-content/plugins/*
+dist/**
+uploads/**
+
+!.gitignore
+!read.me

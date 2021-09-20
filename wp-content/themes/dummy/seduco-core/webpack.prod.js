@@ -1,5 +1,4 @@
 //! prod setup
-const path = require('path');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,18 +7,20 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    publicPath: 'dummy/seduco-core/dist',
+    publicPath: './'
   },
 
   module: {
     rules: [
+      // Transpile acoording to babel conf
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: 'babel-loader'
+        }
       },
+      // Stylesheets processing
       {
         test: /\.s[ac]ss$/,
         use: [
@@ -27,20 +28,22 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           'css-loader',
-          //Autoprefixer
+          // Autoprefixer
           'postcss-loader',
-          // Compiles Sass to CSS
+          // Resolve CSS URL paths
           'resolve-url-loader',
-          'sass-loader',
-        ],
-      },
-    ],
+          // Compiles Sass to CSS
+          'sass-loader'
+        ]
+      }
+    ]
   },
   plugins: [
+    // Optimalize stylesheets
     new MiniCssExtractPlugin({
-      filename: '[name].[hash:8].css',
+      filename: '[name].[contenthash:8].css',
       // Code splitting
-      chunkFilename: '[id].css',
-    }),
-  ],
+      chunkFilename: '[id].css'
+    })
+  ]
 });
