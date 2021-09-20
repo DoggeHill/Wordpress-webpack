@@ -33,7 +33,7 @@ const config = {
     //! working hrm option
     //publicPath: '/seduco-core/dist/',
     //! working with dev
-    publicPath: 'wp-content/themes/seduco-core/dist/'
+    publicPath: 'wp-content/themes/dummy/seduco-core/dist/'
   },
 
   //! MODULES (specified in prod/dev)
@@ -42,29 +42,16 @@ const config = {
       // File loader
       {
         test: /\.(png|svg|jpe?g|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              // Save images as:
-              name: '[name].[hash:8].[ext]',
-              context: path.resolve(__dirname, "src/"),
-              esModule: false,
-              outputPath: 'images',
-              publicPath: '../',
-              useRelativePaths: true
-            }
-          }
-        ]
+        type: 'asset/resource',
+        generator: {
+          filename: './images/[name].[contenthash:8][ext]'
+        }
       },
       {
         test: /\.(ttf|eot|woff|woff2|svg)$/,
-        use: {
-          loader: 'file-loader',
-          // include: path.resolve(__dirname, './src/fonts'),
-          options: {
-            name: 'fonts/[name].[hash:8].[ext]'
-          }
+        type: 'asset/resource',
+        generator: {
+          filename: './fonts/[name].[contenthash:8].[ext]'
         }
       },
       {

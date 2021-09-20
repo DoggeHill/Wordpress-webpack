@@ -5,10 +5,9 @@ const common = require('./webpack.common.js');
 const webpack = require('webpack');
 
 module.exports = merge(common, {
-  target: 'web',
   mode: 'development',
   //adds javascript maps
-  devtool: 'source-map',
+  devtool: 'source-map'
   module: {
     rules: [
       {
@@ -25,7 +24,6 @@ module.exports = merge(common, {
           'resolve-url-loader',
           // Compiles Sass to CSS
           'sass-loader'
-          
         ]
       }
     ]

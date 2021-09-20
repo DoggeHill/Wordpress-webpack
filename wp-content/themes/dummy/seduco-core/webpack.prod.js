@@ -6,6 +6,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
+  devtool: 'source-map',
+  output: {
+    publicPath: 'dummy/seduco-core/dist',
+  },
+
   module: {
     rules: [
       {
@@ -25,6 +30,7 @@ module.exports = merge(common, {
           //Autoprefixer
           'postcss-loader',
           // Compiles Sass to CSS
+          'resolve-url-loader',
           'sass-loader',
         ],
       },
