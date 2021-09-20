@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------
+// UI page
+// -----------------------------------------------------------------------------
+@use '../abstracts' as a;
+
+body {
+  border: 2px solid rgb(255, 0, 0);
+  padding: 2rem;
+  background-color: rgb(173, 46, 156);
+  background-image: url('../../img/favourite.jpg');
+}
+
+* {
+  outline: 1px solid rgb(255, 149, 0);
+}
+
+.typography {
+  .row {
+    justify-content: center;
+  }
+
+  article {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+
+    .h-1,
+    .h-2,
+    .h-3,
+    .h-4,
+    .h-5,
+    .h-6 {
+      color: #3a3333;
+      font-weight: 500;
+      line-height: 1.67;
+      margin-bottom: 2.2rem;
+      text-align: left;
+
+      // ! mediaqueries showcase
+      //// throws an error
+      // @include a.m-exact('what'){
+      //   font-size: 5rem;
+      // }
+      //// no media at all
+      // @include a.m-up(55px){
+      //   font-size: 5.54rem;
+      // }
+      //// this one is valid
+      // @include a.m-up("large){
+      //   font-size: 5.54rem;
+      // }
+
+    }
+
+
+    span,
+    p {
+      color: #3a3333;
+    }
+  }
+
+  .h-1 {
+    font-size: 5.5rem;
+  }
+
+  .h-2 {
+    font-size: 4.4rem;
+  }
+
+  .h-3 {
+    font-size: 3.5rem;
+  }
+
+  .h-4 {
+    font-size: 2.8rem;
+  }
+
+  .h-5 {
+    font-size: 2.3rem;
+  }
+
+  .h-6 {
+    font-size: 2rem;
+  }
+
+  .p-18 {
+    font-size: 1.8rem;
+  }
+
+  .p-16 {
+    font-size: 1.6rem;
+  }
+
+  .p-14 {
+    font-size: 1.4rem;
+  }
+
+  .s-10 {
+    font-size: 1rem;
+  }
+}
+
+.forms {
+  .form-row {
+    position: relative;
+  }
+}
+
+.buttons2 {
+  margin-top: 5rem;
+}
+
